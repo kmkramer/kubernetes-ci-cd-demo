@@ -30,6 +30,6 @@ jobs:
       - name: Build and Push Docker Image
         run: |
           docker build -t kmkramer71/current-time-api:${{ github.sha }} .
-          docker tag kmkramer71/current-time-api:${{ github.sha }}
+          docker tag kmkramer71/current-time-api:${{ github.sha }} kmkramer71/current-time-api:latest
           docker push kmkramer71/current-time-api:${{ github.sha }}
           docker push kmkramer71/current-time-api:latest
