@@ -19,3 +19,16 @@ spec:
         image: kmkramer71/current-time-api:latest
         ports:
         - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: current-time-api
+spec:
+  selector:
+    app: current-time-api
+  ports:
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000
+  type: LoadBalancer
